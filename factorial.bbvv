@@ -1,14 +1,17 @@
 input
 set #2 #1 0 // Input
 set #1 #2 0 // Output variable
+jeq #2 #0 1 // Hardcode for 0
+j 2
+add #1 #0 1 // Print 1 not zero
+j 7
 sub #2 #0 1 // Minus 1 as n already is in input
 jeq #2 #0 1 // Hardcode for 1
-j 2
-print
-exit
-sub #2 #0 1 // Minus one as 50 * 4 = 50 + 50 * 3
+j 1         // Continue if not zero
+j 3         // Jump to print
+sub #2 #0 1 // Minus one as 50 * 4 = 50 + 50 * 3 not 50 + 50 * 4
 jeq #2 #0 1 // Hardcode for 2
-j 2
+j 2         // Jump passed print and exit if not zero
 print
 exit
 
@@ -18,11 +21,11 @@ set #3 #1 0 // Inner loop counter
 sub #3 #0 1 // Counter--
 add #1 #2 0 // Add value to output
 jeq #3 #0 1 // Continue loop if counter != 0
-j -5
+j -4
 
 sub #2 #0 1 // Remove one from outer counter
 jeq #2 #0 1 // Continue loop if counter not equal to 0
-j -11
+j -10       // Jump to inner loop for next value
 
 print
 exit
