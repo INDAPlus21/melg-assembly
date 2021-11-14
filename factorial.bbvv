@@ -1,16 +1,24 @@
 input
 set #2 #1 0 // Input
 set #1 #2 0 // Output variable
-sub #2 #0 1 // n already in input
-sub #2 #0 1
+sub #2 #0 1 // Minus 1 as n already is in input
+jeq #2 #0 1 // Hardcode for 1
+j 2
+print
+exit
+sub #2 #0 1 // Minus one as 50 * 4 = 50 + 50 * 3
+jeq #2 #0 1 // Hardcode for 2
+j 2
+print
+exit
 
 // Inner loop
-set #3 #1 0 // Loop counter
-print
+set #3 #1 0 // Inner loop counter
+
 sub #3 #0 1 // Counter--
 add #1 #2 0 // Add value to output
 jeq #3 #0 1 // Continue loop if counter != 0
-j -4
+j -5
 
 sub #2 #0 1 // Remove one from outer counter
 jeq #2 #0 1 // Continue loop if counter not equal to 0
