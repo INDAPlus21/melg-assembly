@@ -1,0 +1,20 @@
+input
+set #2 #1 0 // Input
+set #1 #2 0 // Output variable
+sub #2 #0 1 // n already in input
+sub #2 #0 1
+
+// Inner loop
+set #3 #1 0 // Loop counter
+print
+sub #3 #0 1 // Counter--
+add #1 #2 0 // Add value to output
+jeq #3 #0 1 // Continue loop if counter != 0
+j -4
+
+sub #2 #0 1 // Remove one from outer counter
+jeq #2 #0 1 // Continue loop if counter not equal to 0
+j -11
+
+print
+exit
